@@ -1,6 +1,6 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/15616532/38152314-37d2d4aa-3435-11e8-8acb-22c699886b2e.png" /></p>
 
-<p align="center">A react native application built with [create-react-native-app](https://github.com/react-community/create-react-native-app) to support the Pantry List application.</p>
+<p align="center">A react native application built with <a href="https://github.com/react-community/create-react-native-app" target="_blank">create-react-native-app</a> to support the Pantry List application.</p>
 
 ## Pantry List Mobile App
 
