@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Pantry List",
+    "slug": "pantry-list",
+    "scheme": "pantryList",
+    "sdkVersion": "26.0.0",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#7B4BDF"
+    }
+  }
+}
