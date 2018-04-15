@@ -8,6 +8,8 @@
 
 * yarn is recommended
 * expo installed on your device or use simulators
+* Copy config/index.exmaple.js to index.js
+* Get cliendIds from [google console](https://console.developers.google.com)
 
 ### `yarn start`
 
