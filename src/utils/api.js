@@ -18,3 +18,9 @@ export const fetchList = async () => {
 
   return listData;
 };
+
+export const fetchBarcodeData = async barcode => {
+  const response = await fetch(`${Config.barcodeAPI}${barcode}`);
+  const barcodeData = await response.json();
+  return barcodeData;
+};

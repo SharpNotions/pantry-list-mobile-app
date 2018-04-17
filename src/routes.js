@@ -6,8 +6,31 @@ import LoginScreen from './screens/login.screen';
 import SplashScreen from './screens/splash.screen';
 import ListScreen from './screens/list.screen';
 import MeScreen from './screens/me.screen';
+import BarcodeScreen from './screens/barcode.screen';
+import BarcodeDetailsScreen from './screens/barcode-datails.screen';
 
 import colors from './utils/colors';
+
+const BarCodeScannerStackNavigator = StackNavigator(
+  {
+    BarcodeScan: {
+      screen: BarcodeScreen,
+      navigationOptions: {
+        title: 'Scan Barcode'
+      }
+    },
+    BarcodeDetails: {
+      screen: BarcodeDetailsScreen,
+      navigationOptions: {
+        title: 'Details'
+      }
+    }
+  },
+  {
+    mode: 'modal',
+    headerMode: 'screen'
+  }
+);
 
 const PantryListStackNavigator = StackNavigator(
   {
@@ -47,6 +70,19 @@ const MainTabNavigator = TabNavigator(
             containerStyle={{ justifyContent: 'center', alignItems: 'center' }}
             name="list"
             size={30}
+            color={tintColor}
+          />
+        )
+      }
+    },
+    Barcode: {
+      screen: BarCodeScannerStackNavigator,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <Icon
+            containerStyle={{ justifyContent: 'center', alignItems: 'center' }}
+            name="camera-alt"
+            size={29}
             color={tintColor}
           />
         )
