@@ -2,8 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import Expo from 'expo';
 import { SocialIcon, Header } from 'react-native-elements';
+import { Config } from '../../config/index';
 
-export default class Login extends React.Component {
+export default class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,10 +16,8 @@ export default class Login extends React.Component {
   signIn = async () => {
     try {
       const result = await Expo.Google.logInAsync({
-        androidClientId:
-          '430381753851-umurbastd4s7rj2mli11fjo9tkfk43a5.apps.googleusercontent.com',
-        iosClientId:
-          '430381753851-4i8ed01u344vd89l61d561jekcprpmqu.apps.googleusercontent.com',
+        androidClientId: Config.androidClientId,
+        iosClientId: Config.iosClientId,
         scopes: ['profile', 'email']
       });
 
@@ -40,7 +39,7 @@ export default class Login extends React.Component {
     return (
       <View style={styles.container}>
         {this.state.signedIn ? (
-          <LoggedInPage name={this.state.name} photoUrl={this.state.photoUrl} />
+          this.props.navigation.navigate('Main')
         ) : (
           <LoginPage signIn={this.signIn} />
         )}
@@ -59,15 +58,6 @@ const LoginPage = props => {
         onPress={() => props.signIn()}
         style={styles.loginButton}
       />
-    </View>
-  );
-};
-
-const LoggedInPage = props => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Welcome:{props.name}</Text>
-      <Image style={styles.image} source={{ uri: props.photoUrl }} />
     </View>
   );
 };
